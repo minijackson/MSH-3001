@@ -1,53 +1,4 @@
-\documentclass[12pt]{article}\usepackage[]{graphicx}\usepackage[]{color}
-%% maxwidth is the original width if it is less than linewidth
-%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
-\makeatletter
-\def\maxwidth{ %
-  \ifdim\Gin@nat@width>\linewidth
-    \linewidth
-  \else
-    \Gin@nat@width
-  \fi
-}
-\makeatother
-
-\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
-\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
-\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
-\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
-\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
-\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
-\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
-\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
-
-\usepackage{framed}
-\makeatletter
-\newenvironment{kframe}{%
- \def\at@end@of@kframe{}%
- \ifinner\ifhmode%
-  \def\at@end@of@kframe{\end{minipage}}%
-  \begin{minipage}{\columnwidth}%
- \fi\fi%
- \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
- \colorbox{shadecolor}{##1}\hskip-\fboxsep
-     % There is no \\@totalrightmargin, so:
-     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
- \MakeFramed {\advance\hsize-\width
-   \@totalleftmargin\z@ \linewidth\hsize
-   \@setminipage}}%
- {\par\unskip\endMakeFramed%
- \at@end@of@kframe}
-\makeatother
-
-\definecolor{shadecolor}{rgb}{.97, .97, .97}
-\definecolor{messagecolor}{rgb}{0, 0, 0}
-\definecolor{warningcolor}{rgb}{1, 0, 1}
-\definecolor{errorcolor}{rgb}{1, 0, 0}
-\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
-
-\usepackage{alltt}
+\documentclass[12pt]{article}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -65,7 +16,7 @@
 \date{11 décembre 2015}
 
 \addbibresource{liography.bib}
-\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+
 \begin{document}
 
 \maketitle
@@ -272,123 +223,120 @@ qui sont attirés par son style, son design, ses couleurs.
 \break
 \part{Analyse des résultats du sondage}
 
+<<intro, echo=FALSE>>=
+library(RColorBrewer)
+library(showtext)
+library(tm)
+library(wordcloud)
 
+sondage.fr <- read.csv("sondage-fr.csv")
+sondage.fr$Horodateur <- as.POSIXct(sondage.fr$Horodateur)
 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
-\includegraphics[width=\maxwidth]{figure/tranche_age_fr-1} \caption[Tranches d'âges des personnes ayant répondu au sondage français]{Tranches d'âges des personnes ayant répondu au sondage français}\label{fig:tranche age fr}
-\end{figure}
+sondage.en <- read.csv("sondage-en.csv")
+sondage.en$Horodateur <- as.POSIXct(sondage.en$Horodateur)
+@
 
+<<tranche age fr, echo=FALSE, fig.cap="Tranches d'âges des personnes ayant répondu au sondage français", fig.pos="H", fig.height=5>>=
+sondage.fr.tableTrancheAge <- table(sondage.fr$Tranche.d.âge)
+pieLabels.fr <- paste(names(sondage.fr.tableTrancheAge), ": ", sondage.fr.tableTrancheAge, sep="")
+pie(sondage.fr.tableTrancheAge, labels=pieLabels.fr)
+@
 
-\end{knitrout}
+<<tranche age en, echo=FALSE, fig.cap="Tranches d'âges des personnes ayant répondu au sondage anglais", fig.pos="H", fig.height=5>>=
+sondage.en.tableTrancheAge <- table(sondage.en$Age.bracket)
+pieLabels.en <- paste(names(sondage.en.tableTrancheAge), ": ", sondage.en.tableTrancheAge, sep="")
+pie(sondage.en.tableTrancheAge, labels=pieLabels.en)
+@
 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
-\includegraphics[width=\maxwidth]{figure/tranche_age_en-1} \caption[Tranches d'âges des personnes ayant répondu au sondage anglais]{Tranches d'âges des personnes ayant répondu au sondage anglais}\label{fig:tranche age en}
-\end{figure}
+<<sexe fr, echo=FALSE, fig.cap="Sexe des personnes ayant répondu au sondage français", fig.pos="H", fig.height=5>>=
+sondage.fr.tableSexe <- table(sondage.fr$Sexe)
+pieLabels.fr <- paste(names(sondage.fr.tableSexe), ": ", sondage.fr.tableSexe, sep="")
+pie(sondage.fr.tableSexe, labels=pieLabels.fr)
+@
 
+<<sexe en, echo=FALSE, fig.cap="Sexe des personnes ayant répondu au sondage anglais", fig.pos="H", fig.height=5>>=
+sondage.en.tableSexe <- table(sondage.en$Gender)
+pieLabels.en <- paste(names(sondage.en.tableSexe), ": ", sondage.en.tableSexe, sep="")
+pie(sondage.en.tableSexe, labels=pieLabels.en)
+@
 
-\end{knitrout}
+<<know fr, echo=FALSE, fig.cap="Pourcentage des personnes connaissant auparavant la C4 Cactus ayant répondu au sondage français", fig.pos="H", fig.height=5>>=
+sondage.fr.tableKnow <- table(sondage.fr$Connaissez.vous.le.modèle.C4.Cactus..)
+pieLabels.fr <- paste(names(sondage.fr.tableKnow), ": ", sondage.fr.tableKnow, sep="")
+pie(sondage.fr.tableKnow, labels=pieLabels.fr)
+@
 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
-\includegraphics[width=\maxwidth]{figure/sexe_fr-1} \caption[Sexe des personnes ayant répondu au sondage français]{Sexe des personnes ayant répondu au sondage français}\label{fig:sexe fr}
-\end{figure}
+<<know en, echo=FALSE, fig.cap="Pourcentage des personnes connaissant auparavant la C4 Cactus ayant répondu au sondage anglais", fig.pos="H", fig.height=5>>=
+sondage.en.tableKnow <- table(sondage.en$Are.you.familiar.with.the.Citroën.C4.Cactus.)
+pieLabels.en <- paste(names(sondage.en.tableKnow), ": ", sondage.en.tableKnow, sep="")
+pie(sondage.en.tableKnow, labels=pieLabels.en)
+@
 
+<<means global, echo=FALSE>>=
+smartWordcloud <- function(texte, lang) {
+  corpus <- VCorpus(VectorSource(texte))
+  # Replace "'", ";" and "/" by spaces to separate words.
+  corpus <- tm_map(corpus, content_transformer(function(x) {
+                                                 gsub("'", " ", gsub(";", " ", gsub("/", " ", x)))
+                                              })
+                  )
+  corpus <- tm_map(corpus, removePunctuation)
+  corpus <- tm_map(corpus, removeWords, stopwords(lang))
 
-\end{knitrout}
+  tdm <- TermDocumentMatrix(corpus)
+  m <- as.matrix(tdm)
+  v <- sort(rowSums(m), decreasing=TRUE)
+  d <- data.frame(word=names(v), freq=v)
 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
-\includegraphics[width=\maxwidth]{figure/sexe_en-1} \caption[Sexe des personnes ayant répondu au sondage anglais]{Sexe des personnes ayant répondu au sondage anglais}\label{fig:sexe en}
-\end{figure}
+  wordcloud(d$word, d$freq, colors=brewer.pal(9, "PuBu")[4:9])
+}
+@
 
+<<means fr, echo=FALSE, fig.cap="Nuage de mots du moyen de prise de conscience de l'existence de la C4 Cactus des personnes ayant répondu au sondage français", fig.pos="H">>=
+smartWordcloud(sondage.fr$Si.oui..par.quels.moyens.en.avez.vous.entendu.parler.., "french")
+@
 
-\end{knitrout}
+<<means en, echo=FALSE, fig.cap="Nuage de mots du moyen de prise de conscience de l'existence de la C4 Cactus des personnes ayant répondu au sondage anglais", fig.pos="H">>=
+smartWordcloud(sondage.en$If.you.are..by.which.means.have.you.heard.about.it., "english")
+@
 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
-\includegraphics[width=\maxwidth]{figure/know_fr-1} \caption[Pourcentage des personnes connaissant auparavant la C4 Cactus ayant répondu au sondage français]{Pourcentage des personnes connaissant auparavant la C4 Cactus ayant répondu au sondage français}\label{fig:know fr}
-\end{figure}
+<<design fr, echo=FALSE, fig.cap="Nuage de mots de l'avis du design de la C4 Cactus des personnes ayant répondu au sondage français", fig.pos="H">>=
+smartWordcloud(sondage.fr$Que.pensez.vous.du.design.de.la.C4.Cactus.., "french")
+@
 
+<<design en, echo=FALSE, fig.cap="Nuage de mots de l'avis du design de la C4 Cactus des personnes ayant répondu au sondage anglais", fig.pos="H">>=
+smartWordcloud(sondage.en$What.can.you.say.about.the.C4.Cactus..design.and.appearance., "english")
+@
 
-\end{knitrout}
+<<interior fr, echo=FALSE, fig.cap="Nuage de mots de l'avis de l'intérieur de la C4 Cactus des personnes ayant répondu au sondage français", fig.pos="H">>=
+smartWordcloud(sondage.fr$L.intérieur.de.la.Cactus.et.ses.fonctionnalités.vont.à.l.essentiel..Qu.en.pensez.vous.., "french")
+@
 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
-\includegraphics[width=\maxwidth]{figure/know_en-1} \caption[Pourcentage des personnes connaissant auparavant la C4 Cactus ayant répondu au sondage anglais]{Pourcentage des personnes connaissant auparavant la C4 Cactus ayant répondu au sondage anglais}\label{fig:know en}
-\end{figure}
+<<interior en, echo=FALSE, fig.cap="Nuage de mots de l'avis de l'intérieur de la C4 Cactus des personnes ayant répondu au sondage anglais", fig.pos="H">>=
+smartWordcloud(sondage.en$The.inside.of.the.Cactus..as.well.as.its.features..gets.down.to.basics..What.do.you.think.about.it., "english")
+@
 
+<<qualities global, echo=FALSE>>=
+coloredBarplot <- function(x) {
+  x <- as.vector(do.call(c, strsplit(levels(x), ";")))
+  x.table <- table(factor(x))
+  x.table.mapped <- as.vector(round((x.table - min(x.table))*8/max(x.table))) + 1
+  x.table.colors <- do.call(c, as.list(brewer.pal(9, "YlOrRd"))[x.table.mapped])
 
-\end{knitrout}
+  x <- barplot(x.table, xaxt='n', col=x.table.colors)
+  par(cex=.6)
+  labs <- names(x.table)
+  text(cex=1, x=x+.5, y=-1.25, labs, xpd=TRUE, srt=20, pos=2)
+}
+@
 
+<<qualities fr, echo=FALSE, fig.cap="Qualités de la C4 Cactus selon les personnes ayant répondu au sondage français", fig.pos="H", fig.height=5>>=
+coloredBarplot(sondage.fr$Quelles.sont.selon.vous.les.qualités.de.la.Cactus..)
+@
 
-
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
-\includegraphics[width=\maxwidth]{figure/means_fr-1} \caption[Nuage de mots du moyen de prise de conscience de l'existence de la C4 Cactus des personnes ayant répondu au sondage français]{Nuage de mots du moyen de prise de conscience de l'existence de la C4 Cactus des personnes ayant répondu au sondage français}\label{fig:means fr}
-\end{figure}
-
-
-\end{knitrout}
-
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
-\includegraphics[width=\maxwidth]{figure/means_en-1} \caption[Nuage de mots du moyen de prise de conscience de l'existence de la C4 Cactus des personnes ayant répondu au sondage anglais]{Nuage de mots du moyen de prise de conscience de l'existence de la C4 Cactus des personnes ayant répondu au sondage anglais}\label{fig:means en}
-\end{figure}
-
-
-\end{knitrout}
-
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
-\includegraphics[width=\maxwidth]{figure/design_fr-1} \caption[Nuage de mots de l'avis du design de la C4 Cactus des personnes ayant répondu au sondage français]{Nuage de mots de l'avis du design de la C4 Cactus des personnes ayant répondu au sondage français}\label{fig:design fr}
-\end{figure}
-
-
-\end{knitrout}
-
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
-\includegraphics[width=\maxwidth]{figure/design_en-1} \caption[Nuage de mots de l'avis du design de la C4 Cactus des personnes ayant répondu au sondage anglais]{Nuage de mots de l'avis du design de la C4 Cactus des personnes ayant répondu au sondage anglais}\label{fig:design en}
-\end{figure}
-
-
-\end{knitrout}
-
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
-\includegraphics[width=\maxwidth]{figure/interior_fr-1} \caption[Nuage de mots de l'avis de l'intérieur de la C4 Cactus des personnes ayant répondu au sondage français]{Nuage de mots de l'avis de l'intérieur de la C4 Cactus des personnes ayant répondu au sondage français}\label{fig:interior fr}
-\end{figure}
-
-
-\end{knitrout}
-
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
-\includegraphics[width=\maxwidth]{figure/interior_en-1} \caption[Nuage de mots de l'avis de l'intérieur de la C4 Cactus des personnes ayant répondu au sondage anglais]{Nuage de mots de l'avis de l'intérieur de la C4 Cactus des personnes ayant répondu au sondage anglais}\label{fig:interior en}
-\end{figure}
-
-
-\end{knitrout}
-
-
-
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
-\includegraphics[width=\maxwidth]{figure/qualities_fr-1} \caption[Qualités de la C4 Cactus selon les personnes ayant répondu au sondage français]{Qualités de la C4 Cactus selon les personnes ayant répondu au sondage français}\label{fig:qualities fr}
-\end{figure}
-
-
-\end{knitrout}
-
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
-\includegraphics[width=\maxwidth]{figure/qualities_en-1} \caption[Qualités de la C4 Cactus selon les personnes ayant répondu au sondage anglais]{Qualités de la C4 Cactus selon les personnes ayant répondu au sondage anglais}\label{fig:qualities en}
-\end{figure}
-
-
-\end{knitrout}
+<<qualities en, echo=FALSE, fig.cap="Qualités de la C4 Cactus selon les personnes ayant répondu au sondage anglais", fig.pos="H", fig.height=5>>=
+coloredBarplot(sondage.en$In.your.opinion..what.are.the.Cactus..qualities.)
+@
 
 \printbibliography%
 
