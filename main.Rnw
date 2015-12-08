@@ -7,8 +7,9 @@
 \usepackage{amsmath}
 %\usepackage{fullpage}
 \usepackage{microtype}
-\usepackage{biblatex}
+\usepackage[backend=biber]{biblatex}
 \usepackage{float}
+\usepackage{csquotes}
 
 \title{Étude de marché de la Citroën Cactus}
 \author{Marc \textsc{Autrand}, Timothée \textsc{Pallot}, Edouard
@@ -223,6 +224,8 @@ qui sont attirés par son style, son design, ses couleurs.
 \break
 \part{Analyse des résultats du sondage}
 
+\section{Âge et sexe}
+
 <<intro, echo=FALSE>>=
 library(RColorBrewer)
 library(showtext)
@@ -234,42 +237,47 @@ sondage.fr$Horodateur <- as.POSIXct(sondage.fr$Horodateur)
 
 sondage.en <- read.csv("sondage-en.csv")
 sondage.en$Horodateur <- as.POSIXct(sondage.en$Horodateur)
+
+legendaryPie <- function(x) {
+  x.table <- table(x)
+  if(length(x.table) >= 3) {
+    if(length(x.table) >= 9) {
+      x.colors <- brewer.pal(length(x.table), "Set3")
+    } else {
+      x.colors <- brewer.pal(length(x.table), "Pastel1")
+    }
+  } else {
+    x.colors <- brewer.pal(3, "Pastel1")
+  }
+  pie(x.table, col=x.colors)
+  legend("topright", legend=x.table, fill=x.colors)
+}
 @
 
 <<tranche age fr, echo=FALSE, fig.cap="Tranches d'âges des personnes ayant répondu au sondage français", fig.pos="H", fig.height=5>>=
-sondage.fr.tableTrancheAge <- table(sondage.fr$Tranche.d.âge)
-pieLabels.fr <- paste(names(sondage.fr.tableTrancheAge), ": ", sondage.fr.tableTrancheAge, sep="")
-pie(sondage.fr.tableTrancheAge, labels=pieLabels.fr)
+legendaryPie(sondage.fr$Tranche.d.âge)
 @
 
 <<tranche age en, echo=FALSE, fig.cap="Tranches d'âges des personnes ayant répondu au sondage anglais", fig.pos="H", fig.height=5>>=
-sondage.en.tableTrancheAge <- table(sondage.en$Age.bracket)
-pieLabels.en <- paste(names(sondage.en.tableTrancheAge), ": ", sondage.en.tableTrancheAge, sep="")
-pie(sondage.en.tableTrancheAge, labels=pieLabels.en)
+legendaryPie(sondage.en$Age.bracket)
 @
 
 <<sexe fr, echo=FALSE, fig.cap="Sexe des personnes ayant répondu au sondage français", fig.pos="H", fig.height=5>>=
-sondage.fr.tableSexe <- table(sondage.fr$Sexe)
-pieLabels.fr <- paste(names(sondage.fr.tableSexe), ": ", sondage.fr.tableSexe, sep="")
-pie(sondage.fr.tableSexe, labels=pieLabels.fr)
+legendaryPie(sondage.fr$Sexe)
 @
 
 <<sexe en, echo=FALSE, fig.cap="Sexe des personnes ayant répondu au sondage anglais", fig.pos="H", fig.height=5>>=
-sondage.en.tableSexe <- table(sondage.en$Gender)
-pieLabels.en <- paste(names(sondage.en.tableSexe), ": ", sondage.en.tableSexe, sep="")
-pie(sondage.en.tableSexe, labels=pieLabels.en)
+legendaryPie(sondage.en$Gender)
 @
 
+\section{Marketing}
+
 <<know fr, echo=FALSE, fig.cap="Pourcentage des personnes connaissant auparavant la C4 Cactus ayant répondu au sondage français", fig.pos="H", fig.height=5>>=
-sondage.fr.tableKnow <- table(sondage.fr$Connaissez.vous.le.modèle.C4.Cactus..)
-pieLabels.fr <- paste(names(sondage.fr.tableKnow), ": ", sondage.fr.tableKnow, sep="")
-pie(sondage.fr.tableKnow, labels=pieLabels.fr)
+legendaryPie(sondage.fr$Connaissez.vous.le.modèle.C4.Cactus..)
 @
 
 <<know en, echo=FALSE, fig.cap="Pourcentage des personnes connaissant auparavant la C4 Cactus ayant répondu au sondage anglais", fig.pos="H", fig.height=5>>=
-sondage.en.tableKnow <- table(sondage.en$Are.you.familiar.with.the.Citroën.C4.Cactus.)
-pieLabels.en <- paste(names(sondage.en.tableKnow), ": ", sondage.en.tableKnow, sep="")
-pie(sondage.en.tableKnow, labels=pieLabels.en)
+legendaryPie(sondage.en$Are.you.familiar.with.the.Citroën.C4.Cactus.)
 @
 
 <<means global, echo=FALSE>>=
@@ -300,6 +308,8 @@ smartWordcloud(sondage.fr$Si.oui..par.quels.moyens.en.avez.vous.entendu.parler..
 smartWordcloud(sondage.en$If.you.are..by.which.means.have.you.heard.about.it., "english")
 @
 
+\section{Apparence de la voiture}
+
 <<design fr, echo=FALSE, fig.cap="Nuage de mots de l'avis du design de la C4 Cactus des personnes ayant répondu au sondage français", fig.pos="H">>=
 smartWordcloud(sondage.fr$Que.pensez.vous.du.design.de.la.C4.Cactus.., "french")
 @
@@ -316,26 +326,78 @@ smartWordcloud(sondage.fr$L.intérieur.de.la.Cactus.et.ses.fonctionnalités.vont
 smartWordcloud(sondage.en$The.inside.of.the.Cactus..as.well.as.its.features..gets.down.to.basics..What.do.you.think.about.it., "english")
 @
 
+\section{Opinion générale}
+
 <<qualities global, echo=FALSE>>=
-coloredBarplot <- function(x) {
+coloredBarplot <- function(x, pal) {
   x <- as.vector(do.call(c, strsplit(levels(x), ";")))
   x.table <- table(factor(x))
   x.table.mapped <- as.vector(round((x.table - min(x.table))*8/max(x.table))) + 1
-  x.table.colors <- do.call(c, as.list(brewer.pal(9, "YlOrRd"))[x.table.mapped])
+  x.table.colors <- do.call(c, as.list(brewer.pal(9, pal))[x.table.mapped])
 
   x <- barplot(x.table, xaxt='n', col=x.table.colors)
   par(cex=.6)
   labs <- names(x.table)
-  text(cex=1, x=x+.5, y=-1.25, labs, xpd=TRUE, srt=20, pos=2)
+  text(cex=1, x=x+.5, y=-.5+(1/max(x.table)), labs, xpd=TRUE, srt=20, pos=2)
 }
 @
 
 <<qualities fr, echo=FALSE, fig.cap="Qualités de la C4 Cactus selon les personnes ayant répondu au sondage français", fig.pos="H", fig.height=5>>=
-coloredBarplot(sondage.fr$Quelles.sont.selon.vous.les.qualités.de.la.Cactus..)
+coloredBarplot(sondage.fr$Quelles.sont.selon.vous.les.qualités.de.la.Cactus.., "YlGn")
 @
 
 <<qualities en, echo=FALSE, fig.cap="Qualités de la C4 Cactus selon les personnes ayant répondu au sondage anglais", fig.pos="H", fig.height=5>>=
-coloredBarplot(sondage.en$In.your.opinion..what.are.the.Cactus..qualities.)
+coloredBarplot(sondage.en$In.your.opinion..what.are.the.Cactus..qualities., "YlGn")
+@
+
+<<flaws fr, echo=FALSE, fig.cap="Défauts de la C4 Cactus selon les personnes ayant répondu au sondage français", fig.pos="H", fig.height=5>>=
+coloredBarplot(sondage.fr$Quels.sont.alors.ses.défauts.., "YlOrRd")
+@
+
+<<flaws en, echo=FALSE, fig.cap="Défauts de la C4 Cactus selon les personnes ayant répondu au sondage anglais", fig.pos="H", fig.height=5>>=
+coloredBarplot(sondage.en$Then.what.are.its.flaws., "YlOrRd")
+@
+
+<<buy fr, echo=FALSE, fig.cap="Proportion personnes ayant répondu au sondage français qui achèteraient une C4 Cactus", fig.pos="H", fig.height=5>>=
+legendaryPie(sondage.fr$Si.vous.deviez.acheter.une.voiture..envisageriez.vous.de.choisir.une.Cactus..)
+@
+
+<<buy en, echo=FALSE, fig.cap="Proportion personnes ayant répondu au sondage anglais qui achèteraient une C4 Cactus", fig.pos="H", fig.height=5>>=
+legendaryPie(sondage.en$If.you.had.to.buy.a.car..would.you.consider.buying.a.Cactus.)
+@
+
+\section{La marque DS}
+
+<<ds know fr, echo=FALSE, fig.cap="Proportion personnes ayant répondu au sondage français sachant que DS était une marque indépendante", fig.pos="H", fig.height=5>>=
+legendaryPie(sondage.fr$DS.est.depuis.2014.une.marque.indépendante.de.Citroën...le.saviez.vous..)
+@
+
+<<ds know en, echo=FALSE, fig.cap="Proportion personnes ayant répondu au sondage anglais sachant que DS était une marque indépendante", fig.pos="H", fig.height=5>>=
+legendaryPie(sondage.en$DS.left.Citroën.in.2014.to.become.an.independent.division.of.PSA..Did.you.know.about.this.)
+@
+
+<<brand fr, echo=FALSE, fig.cap="Nuage de mots de l'avis de la marque DS des personnes ayant répondu au sondage français", fig.pos="H">>=
+smartWordcloud(sondage.fr$Quel.est.votre.avis.sur.la.marque.DS.., "french")
+@
+
+<<brand en, echo=FALSE, fig.cap="Nuage de mots de l'avis de la marque DS des personnes ayant répondu au sondage anglais", fig.pos="H">>=
+smartWordcloud(sondage.en$What.is.your.general.opinion.about.the.brand., "english")
+@
+
+<<preference fr, echo=FALSE, fig.cap="Préférences de marque des personnes ayant répondu au sondage français", fig.pos="H", fig.height=5>>=
+legendaryPie(sondage.fr$Parmi.ces.trois.marques..laquelle.a.votre.préférence..)
+@
+
+<<preference en, echo=FALSE, fig.cap="Préférences de marque des personnes ayant répondu au sondage anglais", fig.pos="H", fig.height=5>>=
+legendaryPie(sondage.en$Among.those.three.brands..current.products..whose.do.you.prefer.)
+@
+
+<<differences fr, echo=FALSE, fig.cap="Nuage de mots de l'avis de la marque DS des personnes ayant répondu au sondage français", fig.pos="H">>=
+smartWordcloud(sondage.fr$Pour.vous..sur.quels.points.la.ligne.DS.se.démarque.t.elle.de.Citroën.., "french")
+@
+
+<<differences en, echo=FALSE, fig.cap="Nuage de mots de l'avis de la marque DS des personnes ayant répondu au sondage anglais", fig.pos="H">>=
+smartWordcloud(sondage.en$According.to.you..what.makes.DS.different.from.Citroën., "english")
 @
 
 \printbibliography%
