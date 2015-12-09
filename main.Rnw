@@ -11,7 +11,7 @@
 \usepackage{float}
 \usepackage{csquotes}
 
-\title{Étude de marché de la Citroën Cactus}
+\title{Étude de marché pour les nouvelles gammes PSA Peugeot-Citroën}
 \author{Marc \textsc{Autrand}, Timothée \textsc{Pallot}, Edouard
 	\textsc{Nguon}, Rémi \textsc{Nicole}}
 \date{11 décembre 2015}
@@ -22,6 +22,10 @@
 
 \maketitle
 
+\break
+~
+\newpage
+\break
 \tableofcontents
 
 \part{Pré-enquête}
@@ -39,11 +43,12 @@ habituelle. Nous avons aussi obtenu leurs avis sur la marque DS, son design
 comparé à des marques de luxe comme Audi et les conséquences de la séparation
 avec la marque Citroën sur cette dernière.
 
-\paragraph{} Nous avons aussi réussi a discuter avec deux conseillers
+\paragraph{} Nous avons aussi réussi à discuter avec deux conseillers
 commerciaux de Renault et Peugeot, contrairement à des concessionnaires comme
 Citroën (pour l'instant) et Toyota qui n'ont pas trouvé le temps de nous
 répondre du fait de la forte présence de clients.
 
+\break
 \section{Historique}
 
 \paragraph{} L'histoire récente de PSA Peugeot-Citroën est marquée par
@@ -58,7 +63,7 @@ proche.
 \paragraph{} En 2009, le lancement de la gamme DS ouvre de nouveaux horizons.
 Créé par le PDG sortant Christian Streiff, le label mise sur le retour très
 populaire des anciens modèles phares des marques européennes : Mini Cooper,
-Fiat 500, etc\ldots Si le sigle DS apporte l'héritage de la gamme mythique des
+Fiat 500, etc. Si le sigle DS apporte l'héritage de la gamme mythique des
 années 1960, le design est celui d'une marque premium, tout comme le prix des
 modèles. Citroën part ainsi à l'assaut de ténors comme Audi, mais aussi du
 marché chinois, longtemps délaissé, pour lequel le prix a moins d'importance
@@ -82,6 +87,7 @@ du groupe.\\
 \noindent \emph{Quel développement peuvent connaître ces deux gammes, et
 	peuvent-elles coexister?}
 
+\break
 \section{Méthodologie}
 
 \paragraph{} Afin de réaliser notre étude, nous sommes allés rencontrer des
@@ -95,7 +101,7 @@ personnes différentes.
 de chances de trouver un public à l'étranger qu'en France, nous avons également
 cherché des retours à l'international. Cette décision était confortée par les
 prix reçus par le véhicule : voiture de l'année en Espagne et au Danemark, prix
-du design de New York, etc\ldots Nous avons ainsi réalisé une version du
+du design de New York, etc. Nous avons ainsi réalisé une version du
 sondage en langue anglaise, afin de la partager sur les réseaux sociaux mais
 aussi auprès de communautés d'amateurs de voitures françaises. Si une majorité
 de retours nous sont venus du Royaume-Uni, des réponses ont aussi été données
@@ -122,7 +128,7 @@ garage à cause des air-bumps car lorsque ceux-ci sont abîmés et doivent être
 changés, il faut changer les deux portes étant reliées à l'air-bump cassé et
 tout le plastique autour, ce qui demande beaucoup de temps et de main d'œuvre.
 De plus, de son point de vue, la partie avant de la voiture ressemble trop à
-celle d'un 4x4, elle est trop imposante ce qui ne correspond pas à ce que
+celle d'un $4 \times 4$, elle est trop imposante ce qui ne correspond pas à ce que
 produit Citroën habituellement.
 
 \paragraph{} En ce qui concerne la marque DS, son avis est totalement
@@ -148,17 +154,17 @@ prix: elle fournit des voitures à prix élevés de l'ordre de ceux des véhicul
 produits par Audi ou BMW, mais pas de la même qualité.
 
 \paragraph{} De plus, Citroën a voulu aller trop vite car à l'origine, la
-marque produisait des voitures qui n'étaient pas adapté au public des jeunes
+marque produisait des voitures qui n'étaient pas adaptées au public des jeunes
 personnes.  Elle ne produit pas non plus de voitures de luxe, et n'était pas
 assez reconnue pour avoir l'effet escompté sur le grand public. Elle a voulu
 être en avance sur son temps, mais s'est essoufflée. Par exemple, pour la
 Peugeot 3008, les ingénieurs de la marque ont conçus cette voiture en 2009,
-mais la voiture n'a été fabriquée que 4 ans plus tard. Il ont eu la présence
+mais la voiture n'a été fabriquée que 4 ans plus tard. Ils ont eu la présence
 d'esprit d'avoir anticipé le futur besoin des gens en avance de 4 ans et de la
 commercialiser au bon moment.
 
 \paragraph{} Enfin, le dernier problème de DS se situe dans ses garages: ils
-n'ont pas misés leurs efforts sur la qualité, ce qui n'est pas respectueux de
+n'ont pas misé leurs efforts sur la qualité, ce qui n'est pas respectueux de
 la part d'un constructeur de voitures de luxe dont les prix sont de l'ordre de
 50 000 voire 70 000 €.
 
@@ -167,10 +173,10 @@ la part d'un constructeur de voitures de luxe dont les prix sont de l'ordre de
 \subsection{Citroën C4 Cactus}
 
 \paragraph{} Avec sa mise en vente en 2014, la C4 Cactus connaît un début
-discret en terme de vente mais a réussi tout de même à enregistrer 75 000
+discret en termes de vente mais a réussi tout de même à enregistrer 75 000
 ventes au bout d'un an ainsi que 35 distinctions à travers le
 monde\cite{communique}, mais seulement 27\% ont été vendues en France. Les
-Français sont beaucoup moins attirés par ce modèle car le modèle n'a pas été
+Français sont beaucoup moins attirés par ce modèle, car le modèle n'a pas été
 commandé plus de 20 000 fois depuis son lancement en Juin 2014 et a été vendus
 en seulement 6 000 exemplaires en cette année 2015. Il faut aussi prendre en
 compte le fait que les agents de la marque en ont presque tous une par
@@ -181,7 +187,7 @@ en France depuis le début de l'année 2015.
 
 \paragraph{} Ce modèle allie confort et technologie utile et vise un public
 cherchant plus un voiture utile qu'un voiture permettant d'affirmer son statut
-social. En terme de prix, la Citroën Cactus se positionne entre voitures ``low
+social. En termes de prix, la Citroën Cactus se positionne entre voitures ``low
 cost'' et voitures haut de gamme. En effet, son prix peut varier entre 15 200 €
 et 22 900 € à neuf selon la finition et le moteur pris\cite{banquette}.
 
@@ -201,9 +207,9 @@ puisqu'ils s'articulent autour de 20 000 € pour les modèles les plus chers.
 pas très développé, la partie plastique qui n'est pas d'une grande qualités et
 des bruits parasites viennent de temps en temps agacer le conducteur. Le
 dernier point noir de ce modèle se situe au niveau des vitres arrières qui ne
-peuvent pas s'ouvir. La DS4 viens s'ajouter au marché en 2011, soit un an après
-la sortie de son ainée et elle ne suscite pas autant d'admiration chez les
-clients car les ventes n'arrivent pas à décoller : 10 757 voitures vendues lors
+peuvent pas s'ouvrir. La DS4 vient s'ajouter au marché en 2011, soit un an après
+la sortie de son aînée et elle ne suscite pas autant d'admiration chez les
+clients, car les ventes n'arrivent pas à décoller : 10 757 voitures vendues lors
 de la première année, pour atteindre le pic de ventes l'année d'après avec 14
 143 modèles vendus et retomber à 11 740 et 8 661 ventes en 2013 et 2014.
 
@@ -216,10 +222,10 @@ l'équipement de la voiture. Le confort global est lui beaucoup moins bon sur la
 DS4 et la DS5 que sur la DS3.
 
 \paragraph{} Cette nouvelle marque se distingue beaucoup de Citroën dans son
-design, son luxe mais aussi son prix. Elle ne touche plus le commun des mortels
-(pas mal hein hihi, mais a changer peut etre), elle se rapproche plus des
-marques allemandes telles que Audi et BMW. Elle touche donc plus les jeunes,
-qui sont attirés par son style, son design, ses couleurs.
+design, son luxe mais aussi son prix. Elle ne touche plus le citoyen lambda,
+mais se rapproche plus des marques allemandes telles que Audi et BMW. Elle
+touche donc plus les jeunes, qui sont attirés par son style, son design, ses
+couleurs.
 
 \break
 \part{Analyse des résultats du sondage}
@@ -257,10 +263,18 @@ legendaryPie <- function(x) {
 <<tranche age fr, echo=FALSE, fig.cap="Tranches d'âges des personnes ayant répondu au sondage français", fig.pos="H", fig.height=5>>=
 legendaryPie(sondage.fr$Tranche.d.âge)
 @
+\paragraph{} Du fait que nous ayons envoyé notre sondage français sur les
+réseaux sociaux, nous avons récolté la plupart de nos réponses de la part des
+jeunes dont la tranche d'âge est de 15-30 ans.
 
 <<tranche age en, echo=FALSE, fig.cap="Tranches d'âges des personnes ayant répondu au sondage anglais", fig.pos="H", fig.height=5>>=
 legendaryPie(sondage.en$Age.bracket)
 @
+
+\paragraph{} En ce qui concerne notre sondage anglais, que nous avons posté sur
+la page Facebook anglaise de Citroën, les résultats sont beaucoup plus diverses
+et concerne surtout plus les personnes plus âgées, de plus de 40 ans. Elles
+représentent 79\% des personnes ayant répondu à cette enquête.
 
 <<sexe fr, echo=FALSE, fig.cap="Sexe des personnes ayant répondu au sondage français", fig.pos="H", fig.height=5>>=
 legendaryPie(sondage.fr$Sexe)
@@ -270,15 +284,26 @@ legendaryPie(sondage.fr$Sexe)
 legendaryPie(sondage.en$Gender)
 @
 
+\paragraph{} Parmi toutes les personnes ayant répondu à notre sondage,
+seulement 32 sur 156 sont des femmes, soit 21\%, ce qui fait assez peu. Ceci
+montre que les femmes sont beaucoup moins intéressées par les voitures que les
+hommes, en particulier ce qui concerne celles produites par Citroën.
+
+\break
 \section{Marketing}
 
-<<know fr, echo=FALSE, fig.cap="Pourcentage des personnes connaissant auparavant la C4 Cactus ayant répondu au sondage français", fig.pos="H", fig.height=5>>=
+<<know fr, echo=FALSE, fig.cap="Proportion des personnes connaissant auparavant la C4 Cactus ayant répondu au sondage français", fig.pos="H", fig.height=5>>=
 legendaryPie(sondage.fr$Connaissez.vous.le.modèle.C4.Cactus..)
 @
 
-<<know en, echo=FALSE, fig.cap="Pourcentage des personnes connaissant auparavant la C4 Cactus ayant répondu au sondage anglais", fig.pos="H", fig.height=5>>=
+<<know en, echo=FALSE, fig.cap="Proportion des personnes connaissant auparavant la C4 Cactus ayant répondu au sondage anglais", fig.pos="H", fig.height=5>>=
 legendaryPie(sondage.en$Are.you.familiar.with.the.Citroën.C4.Cactus.)
 @
+
+\paragraph{} Pour ce qui est de la connaissance de la C4 Cactus, les deux
+sondages donnent à peu près les mêmes résultats : les étrangers ayant répondu
+au sondage anglais connaissent tous ce modèle, tandis qu'il n'est pas connu
+unanimement en France : 15\% des personnes sondées ne le connaissent pas.
 
 <<means global, echo=FALSE>>=
 smartWordcloud <- function(texte, lang) {
@@ -308,6 +333,13 @@ smartWordcloud(sondage.fr$Si.oui..par.quels.moyens.en.avez.vous.entendu.parler..
 smartWordcloud(sondage.en$If.you.are..by.which.means.have.you.heard.about.it., "english")
 @
 
+\paragraph{} Ce nuage de point nous démontre que la majorité des gens
+connaissent la C4 Cactus grâce aux publicités, aux magasines et à Internet. En
+ce qui concerne le sondage anglais, du fait qu'il ait été publié sur un site de
+Citroën, une grande partie des personnes ont répondu qu'elles connaissent la C4
+Cactus car elles suivent l'actualité de la marque.
+
+\break
 \section{Apparence de la voiture}
 
 <<design fr, echo=FALSE, fig.cap="Nuage de mots de l'avis du design de la C4 Cactus des personnes ayant répondu au sondage français", fig.pos="H">>=
@@ -318,6 +350,11 @@ smartWordcloud(sondage.fr$Que.pensez.vous.du.design.de.la.C4.Cactus.., "french")
 smartWordcloud(sondage.en$What.can.you.say.about.the.C4.Cactus..design.and.appearance., "english")
 @
 
+\paragraph{} Les avis sur le design de la C4 Cactus sont assez partagés chez
+les Français : on retrouve le plus souvent les termes ``très original'',
+``design'', ``esthétique'', ``beau'', mais aussi ``moche''. Les anglais sont
+eux, contre toute attente, très flatteurs vis-à-vis du modèle.
+
 <<interior fr, echo=FALSE, fig.cap="Nuage de mots de l'avis de l'intérieur de la C4 Cactus des personnes ayant répondu au sondage français", fig.pos="H">>=
 smartWordcloud(sondage.fr$L.intérieur.de.la.Cactus.et.ses.fonctionnalités.vont.à.l.essentiel..Qu.en.pensez.vous.., "french")
 @
@@ -326,6 +363,13 @@ smartWordcloud(sondage.fr$L.intérieur.de.la.Cactus.et.ses.fonctionnalités.vont
 smartWordcloud(sondage.en$The.inside.of.the.Cactus..as.well.as.its.features..gets.down.to.basics..What.do.you.think.about.it., "english")
 @
 
+\paragraph{} Concernant l'intérieur de la voiture, les termes ``bien'',
+``bonne'', mais aussi ``simple'', ``great'', ``like'' reviennent très souvent,
+qui montre que l'intérieur du modèle est très apprécié par les clients, non
+seulement les loyaux anglais, mais aussi plusieurs français dont l'attrait pour
+la voiture n'est pas unanime.
+
+\break
 \section{Opinion générale}
 
 <<qualities global, echo=FALSE>>=
@@ -346,17 +390,33 @@ coloredBarplot <- function(x, pal) {
 coloredBarplot(sondage.fr$Quelles.sont.selon.vous.les.qualités.de.la.Cactus.., "YlGn")
 @
 
-<<qualities en, echo=FALSE, fig.cap="Qualités de la C4 Cactus selon les personnes ayant répondu au sondage anglais", fig.pos="H", fig.height=5>>=
-coloredBarplot(sondage.en$In.your.opinion..what.are.the.Cactus..qualities., "YlGn")
-@
-
 <<flaws fr, echo=FALSE, fig.cap="Défauts de la C4 Cactus selon les personnes ayant répondu au sondage français", fig.pos="H", fig.height=5>>=
 coloredBarplot(sondage.fr$Quels.sont.alors.ses.défauts.., "YlOrRd")
+@
+
+\paragraph{} Les français sont aussi très partagés dans les qualités et défauts
+de la C4 Cactus. Plus de 20 personnes ont répondu que son originalité, son
+design extérieur, la simplicité de son intérieur et de ses fonctionnalités, et
+ses coussins ``airbump'' constituent ses qualités, alors que 24 personnes
+pensent que son design extérieur, comprenant les airbumps, constitue son
+principal défaut. L'incertitude sur le public visé et le décalage avec l'esprit
+Citroën constituent les deux autres principaux défauts remarqués par les
+français.
+
+<<qualities en, echo=FALSE, fig.cap="Qualités de la C4 Cactus selon les personnes ayant répondu au sondage anglais", fig.pos="H", fig.height=5>>=
+coloredBarplot(sondage.en$In.your.opinion..what.are.the.Cactus..qualities., "YlGn")
 @
 
 <<flaws en, echo=FALSE, fig.cap="Défauts de la C4 Cactus selon les personnes ayant répondu au sondage anglais", fig.pos="H", fig.height=5>>=
 coloredBarplot(sondage.en$Then.what.are.its.flaws., "YlOrRd")
 @
+
+\paragraph{} Pour les étrangers actifs sur la page Facebook de Citroën, la
+Citroën a plusieurs qualités qui sont son originalité, son design, son
+comportement routier, la simplicité de son intérieur et de ses fonctionnalités
+mais aussi ses airbumps. Cependant, 5 personnes trouvent que le public visé par
+la marque est incertain, et 6 personnes trouvent que le nombre de
+fonctionnalités est trop faible.
 
 <<buy fr, echo=FALSE, fig.cap="Proportion personnes ayant répondu au sondage français qui achèteraient une C4 Cactus", fig.pos="H", fig.height=5>>=
 legendaryPie(sondage.fr$Si.vous.deviez.acheter.une.voiture..envisageriez.vous.de.choisir.une.Cactus..)
@@ -366,6 +426,11 @@ legendaryPie(sondage.fr$Si.vous.deviez.acheter.une.voiture..envisageriez.vous.de
 legendaryPie(sondage.en$If.you.had.to.buy.a.car..would.you.consider.buying.a.Cactus.)
 @
 
+\paragraph{} Pour finir avec la Citroën C4 Cactus, un quart des Français
+interrogés achèteraient ce modèle s'ils devaient acheter une automobile, alors
+que 94\% des étrangers sondés feraient aussi ce choix.
+
+\break
 \section{La marque DS}
 
 <<ds know fr, echo=FALSE, fig.cap="Proportion personnes ayant répondu au sondage français sachant que DS était une marque indépendante", fig.pos="H", fig.height=5>>=
@@ -376,6 +441,9 @@ legendaryPie(sondage.fr$DS.est.depuis.2014.une.marque.indépendante.de.Citroën.
 legendaryPie(sondage.en$DS.left.Citroën.in.2014.to.become.an.independent.division.of.PSA..Did.you.know.about.this.)
 @
 
+\paragraph{} La part des Français sachant que DS est une marque indépendante et
+très similaire à celle des étrangers : 57 et 62\% respectivement.
+
 <<brand fr, echo=FALSE, fig.cap="Nuage de mots de l'avis de la marque DS des personnes ayant répondu au sondage français", fig.pos="H">>=
 smartWordcloud(sondage.fr$Quel.est.votre.avis.sur.la.marque.DS.., "french")
 @
@@ -383,6 +451,10 @@ smartWordcloud(sondage.fr$Quel.est.votre.avis.sur.la.marque.DS.., "french")
 <<brand en, echo=FALSE, fig.cap="Nuage de mots de l'avis de la marque DS des personnes ayant répondu au sondage anglais", fig.pos="H">>=
 smartWordcloud(sondage.en$What.is.your.general.opinion.about.the.brand., "english")
 @
+
+\paragraph{} Concernant les avis sur la marque DS, le français et étrangers
+sont aussi d'accord sur ce point : cette nouvelle marque incarne le luxe et un
+design novateur et beau, et est aussi très chère.
 
 <<preference fr, echo=FALSE, fig.cap="Préférences de marque des personnes ayant répondu au sondage français", fig.pos="H", fig.height=5>>=
 legendaryPie(sondage.fr$Parmi.ces.trois.marques..laquelle.a.votre.préférence..)
@@ -392,13 +464,30 @@ legendaryPie(sondage.fr$Parmi.ces.trois.marques..laquelle.a.votre.préférence..
 legendaryPie(sondage.en$Among.those.three.brands..current.products..whose.do.you.prefer.)
 @
 
-<<differences fr, echo=FALSE, fig.cap="Nuage de mots de l'avis de la marque DS des personnes ayant répondu au sondage français", fig.pos="H">>=
-smartWordcloud(sondage.fr$Pour.vous..sur.quels.points.la.ligne.DS.se.démarque.t.elle.de.Citroën.., "french")
-@
+\paragraph{} Cependant, ils n'ont pas le même regard sur la concurrence
+incarnée par Audi et BMW notamment, car si plus de la moitié des français sont
+très attirés par la première marque allemande citée, les Anglais sont eux en
+faveur de la marque française.
 
-<<differences en, echo=FALSE, fig.cap="Nuage de mots de l'avis de la marque DS des personnes ayant répondu au sondage anglais", fig.pos="H">>=
-smartWordcloud(sondage.en$According.to.you..what.makes.DS.different.from.Citroën., "english")
-@
+\part{Conclusion}
+
+\paragraph{} Après sa mise en vente en 2014, la Citroën C4 Cactus finit par
+n'arriver qu'à la 22ème place des voitures les plus vendues en France depuis le
+début de l'année 2015. Ce manque de réussite se traduit par un design
+complètement différent que Citroën a fait preuve. Certaines personnes aiment ce
+nouveau SUV avec les airbumps sur les cotées mais en France beaucoup pensent
+que cette originalité n'est pas agréable à regarder au vue des sondage au grand
+public. Son prix, son confort et sa technologie en fait une voiture destinée à
+des acheteurs cherchant un voiture utilitaire.
+
+\paragraph{} DS quant à elle s'est lancée sur une ligne de voiture plus haut de
+gamme de part son prix et son design. Elle incarne la voiture de luxe à la
+française et cherchent à concurrencer Audi et BMW.  Au vue du sondage, le jeune
+public ( 20-30 ans ) préfère en majorité la Audi à la DS ou à la BMW mais la
+part préfèrent la DS et la part préfèrent la BMW sont à peu près équivalentes,
+La DS peut donc vraiment rivaliser avec Audi ou BMW dans les années à venir car
+elle touche le même public recherchant le luxe ce qui du coup ne tue en aucun
+cas la marque Citroën qui propose des voitures plus bas de gamme.
 
 \printbibliography%
 
